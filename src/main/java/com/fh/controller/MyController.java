@@ -39,7 +39,7 @@ public class MyController {
         // 判断数据库中是否有值
         if(!CollectionUtils.isEmpty(resultData)){
             dbPassword = (String) resultData.get(0).get("password");
-            // 潘丹密码是否正确
+            // 判断密码是否正确
             if(!StringUtils.isEmpty(dbPassword)&&dbPassword.equals(person.getPassword())){
                 request.getSession().setAttribute("person",person);
                 return "redirect:index.jsp";
@@ -70,8 +70,6 @@ public class MyController {
     @RequestMapping("/searchContent")
     @ResponseBody
     public ResultVo searchContent(String content){
-//        content = "%"+content.replaceAll("%","\\%").
-//                replaceAll("_", "\\_")+"%";
         String sql = "SELECT CONTENT,TO_CHAR(CREATETIME,'YYYY-MM-DD HH24:mm:ss') CREATETIME FROM ISC_CONTENT WHERE  " +
                 "CONTENT LIKE '%'||REPLACE(REPLACE(?,'%' ,'\\%' ),'_','\\_')||'%' ESCAPE '\\'";
         List<Map<String, Object>> resData = jdbcTemplate.queryForList(sql, content);

@@ -10,7 +10,6 @@
         <button onclick="doJsonSub()" class="btn btn-primary">json提交</button>
     </div>
 
-
     <section>
         <div style="margin-top: 5px">
             <input type="textarea" name="content" id="searchContent" placeholder="请输入关键字"/>
