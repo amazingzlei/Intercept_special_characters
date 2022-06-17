@@ -114,7 +114,7 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
-      <version>1.2.53</version>
+      <version>1.2.83</version>
     </dependency>
 
     <!-- Jackson：解决ResponseBody的乱码问题，且自动装响应结果设置为json -->
